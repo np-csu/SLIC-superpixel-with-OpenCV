@@ -8,15 +8,15 @@ We modified the [SLICO version of slic algorithm](http://ivrg.epfl.ch/research/s
 
 	Perform SLIC algorithm on the given image with the given number of superpixels.
 	
-	img - 24-bit or 8-bit cv::Mat 
+	`img` - 24-bit or 8-bit cv::Mat 
 	
-	numSuperpixels - an appropriate number, no more than total number of pixels
+	`numSuperpixels` - an appropriate number, no more than total number of pixels
 
 * `cv::Mat SLIC::GetImgWithContours(cv::Scalar color)`
 
 	Get the result image with contours on the given color.
 	
-	color - If input image is 24-bit, the color may be cv::Scalar(255, 0, 0) or cv::Scalar(0, 255, 0) or cv::Scalar(0, 0, 255)
+	`color` - If input image is 24-bit, the color may be cv::Scalar(255, 0, 0) or cv::Scalar(0, 255, 0) or cv::Scalar(0, 0, 255)
 
 	If input image is 8-bit, the color may be cv::Scalar(0) or cv::Scalar(128) or cv::Scalar(255)
 
@@ -27,15 +27,15 @@ We modified the [SLICO version of slic algorithm](http://ivrg.epfl.ch/research/s
 
 ## Example
 
-original image
+* original image
 
 ![bird_color.jpg](bird_color.jpg)
 
-200 superpixels
+* 200 superpixels
 
 ![bird_color.jpg](bird_color_200.jpg)
 
-500 superpixels
+* 500 superpixels
 
 ![bird_color.jpg](bird_color_500.jpg)
 
