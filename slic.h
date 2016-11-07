@@ -25,14 +25,20 @@
 // Email: nipan1988@gmail.com
 // 
 
-#if !defined(_SLIC_H_INCLUDED_)
-#define _SLIC_H_INCLUDED_
+#pragma once
 
 
 #include <vector>
 #include <string>
 #include <algorithm>
+
 #include <opencv2/opencv.hpp>
+
+#if (defined WIN32 || defined _WIN32)
+#  define SLIC_EXPORTS __declspec(dllexport)
+#else
+#  define SLIC_EXPORTS
+#endif
 
 using namespace std;
 using namespace cv;
@@ -42,7 +48,7 @@ typedef unsigned char uchar;
 
 enum imageType {RGB, GRAY};
 
-class SLIC  
+class SLIC_EXPORTS SLIC
 {
 public:
 	SLIC();
@@ -264,8 +270,6 @@ private:
 	UINT*									bufferRGB; // buffer for if RGB image
 	uchar*									bufferGray; // buffer if gray image
 
-	int*									label; // label record the superpixel pixel belongs to
+	int*									label; // label record which superpixel a pixel belongs to
 	imageType								type;
 };
-
-#endif // !defined(_SLIC_H_INCLUDED_)

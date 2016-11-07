@@ -29,7 +29,7 @@
 #include <cmath>
 #include <iostream>
 #include <fstream>
-#include "SLIC.h"
+#include "slic.h"
 
 // For superpixels
 const int dx4[4] = {-1,  0,  1,  0};
@@ -99,7 +99,7 @@ SLIC::~SLIC()
 //==============================================================================
 ///	RGB2XYZ
 ///
-/// sRGB (D65 illuninant assumption) to XYZ conversion
+/// sRGB (D65 illuminant assumption) to XYZ conversion
 //==============================================================================
 void SLIC::RGB2XYZ(
 	const int&		sR,
