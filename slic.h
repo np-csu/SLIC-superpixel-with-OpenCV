@@ -40,9 +40,6 @@
 #  define SLIC_EXPORTS
 #endif
 
-using namespace std;
-using namespace cv;
-
 typedef unsigned int UINT;
 typedef unsigned char uchar;
 
@@ -113,8 +110,8 @@ private:
 		const int*					labels,
 		const int&					width,
 		const int&					height,
-		const string&				filename,
-		const string&				path);
+		const std::string&				filename,
+		const std::string&				path);
 	//============================================================================
 	// Function to draw boundaries around superpixels of a given 'color'.
 	// Can also be used to draw boundaries around supervoxels, i.e layer by layer.
@@ -148,11 +145,11 @@ private:
 	// SLICO (SLIC Zero) varies only M dynamicaly, not S.
 	//============================================================================
 	void PerformSuperpixelSegmentation_VariableSandM(
-		vector<double>&				kseedsl,
-		vector<double>&				kseedsa,
-		vector<double>&				kseedsb,
-		vector<double>&				kseedsx,
-		vector<double>&				kseedsy,
+		std::vector<double>&				kseedsl,
+		std::vector<double>&				kseedsa,
+		std::vector<double>&				kseedsb,
+		std::vector<double>&				kseedsx,
+		std::vector<double>&				kseedsy,
 		int*						klabels,
 		const int&					STEP,
 		const int&					NUMITR);
@@ -160,37 +157,37 @@ private:
 	// Pick seeds for superpixels when step size of superpixels is given.
 	//============================================================================
 	void GetLABXYSeeds_ForGivenStepSize(
-		vector<double>&				kseedsl,
-		vector<double>&				kseedsa,
-		vector<double>&				kseedsb,
-		vector<double>&				kseedsx,
-		vector<double>&				kseedsy,
+		std::vector<double>&				kseedsl,
+		std::vector<double>&				kseedsa,
+		std::vector<double>&				kseedsb,
+		std::vector<double>&				kseedsx,
+		std::vector<double>&				kseedsy,
 		const int&					STEP,
 		const bool&					perturbseeds,
-		const vector<double>&		edgemag);
+		const std::vector<double>&		edgemag);
 	//============================================================================
 	// Pick seeds for superpixels when number of superpixels is input.
 	//============================================================================
 	void GetLABXYSeeds_ForGivenK(
-		vector<double>&				kseedsl,
-		vector<double>&				kseedsa,
-		vector<double>&				kseedsb,
-		vector<double>&				kseedsx,
-		vector<double>&				kseedsy,
+		std::vector<double>&				kseedsl,
+		std::vector<double>&				kseedsa,
+		std::vector<double>&				kseedsb,
+		std::vector<double>&				kseedsx,
+		std::vector<double>&				kseedsy,
 		const int&					STEP,
 		const bool&					perturbseeds,
-		const vector<double>&		edges);
+		const std::vector<double>&		edges);
 
 	//============================================================================
 	// Move the seeds to low gradient positions to avoid putting seeds at region boundaries.
 	//============================================================================
 	void PerturbSeeds(
-		vector<double>&				kseedsl,
-		vector<double>&				kseedsa,
-		vector<double>&				kseedsb,
-		vector<double>&				kseedsx,
-		vector<double>&				kseedsy,
-		const vector<double>&		edges);
+		std::vector<double>&				kseedsl,
+		std::vector<double>&				kseedsa,
+		std::vector<double>&				kseedsb,
+		std::vector<double>&				kseedsx,
+		std::vector<double>&				kseedsy,
+		const std::vector<double>&		edges);
 	//============================================================================
 	// Detect color edges, to help PerturbSeeds()
 	//============================================================================
@@ -200,7 +197,7 @@ private:
 		const double*				bvec,
 		const int&					width,
 		const int&					height,
-		vector<double>&				edges);
+		std::vector<double>&				edges);
 	//============================================================================
 	// xRGB to XYZ conversion; helper for RGB2LAB()
 	//============================================================================
