@@ -31,6 +31,9 @@
 #include <fstream>
 #include "slic.h"
 
+using namespace cv;
+using namespace std;
+
 // For superpixels
 const int dx4[4] = {-1,  0,  1,  0};
 const int dy4[4] = { 0, -1,  0,  1};
